@@ -1,7 +1,33 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  const [photosList, setPhotosList] = useState([]);  
+
+  useEffect( () => {
+    getPhotos();
+  }, []);
+
+  const getPhotos = () => (
+    axios({
+      method: 'GET',
+      url: '/gallery'
+    })
+    .then(response=>{
+      console.log('GET response is', response.data)
+      setPhotosList(response.data);
+    })
+    .catch((error)=>{
+      console.log('error in GET endpoint', error);
+    })
+  );
+
+
+
+ 
+
     return (
       <div className="App">
         <header className="App-header">
