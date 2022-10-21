@@ -1,16 +1,20 @@
+import GalleryItem from "../GalleryItem/GalleryItem";
+
 function GalleryList({photosList}) {
     console.log('in GalleryList');
     return (
         <>
-        <ul>
+        
             {console.log(photosList)}
             {photosList.map(photo => 
-            <li>
-                    <p>{photo.description}</p>
-                    <img src={photo.path}/>
-            </li>
+            <figure key={photo.id}>
+                <GalleryItem 
+                photo={photo}
+                />
+            </figure>
+            
             )}
-        </ul>
+        
         </>
     );
 }
