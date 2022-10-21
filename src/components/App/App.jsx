@@ -25,6 +25,20 @@ function App() {
     })
   );
 
+  function likePhoto(photo) {
+    axios({
+        method: 'PUT',
+        url: `/gallery/like/${photo.id}`
+      })
+      .then(response=>{
+        console.log('PUT done');
+        getPhotos();
+      })
+      .catch((error)=>{
+        console.log('error in PUT endpoint', error);
+      })
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -36,6 +50,7 @@ function App() {
 
         <GalleryList 
         photosList={photosList}
+        likePhoto={likePhoto}
         />
       </div>
     );
