@@ -1,24 +1,13 @@
 import axios from 'axios';
 
-function GalleryItem({photo}) {
+function GalleryItem({photo, likePhoto}) {
 
     function handleLike() {
         console.log(photo.id);
         likePhoto(photo);
     }
 
-    function likePhoto(photo) {
-        axios({
-            method: 'PUT',
-            url: `/gallery/like/${photo.id}`
-          })
-          .then(response=>{
-            console.log('PUT done');
-          })
-          .catch((error)=>{
-            console.log('error in PUT endpoint', error);
-          })
-    }
+
 
     return (
         <>
