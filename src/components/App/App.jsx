@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import GalleryForm from '../GalleryForm/GalleryForm';
 import GalleryList from '../GalleryList/GalleryList';
 import './App.css';
 
@@ -12,17 +13,34 @@ function App() {
   }, []);
 
 
+  // function add photo to the database
+  const addPhoto = (photo) => (
+    axios({
+      method: 'POST',
+      url: '/gallery',
+      data: photo
+    })
+    .then(response => {
+      console.log('POST photo');
+      //getPhotos();
+    })
+    .catch((error) => {
+      console.log('error in POST', error);
+    })
+  );
+  
+
   // GET endpoint
   const getPhotos = () => (
     axios({
       method: 'GET',
       url: '/gallery'
     })
-    .then(response=>{
+    .then(response => {
       console.log('GET response is', response.data)
       setPhotosList(response.data);
     })
-    .catch((error)=>{
+    .catch((error) => {
       console.log('error in GET endpoint', error);
     })
   );
@@ -48,7 +66,8 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-
+        <GalleryForm
+        addPhoto={addPhoto} />
         <GalleryList 
         photosList={photosList}
         likePhoto={likePhoto}

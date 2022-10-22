@@ -58,6 +58,24 @@ router.get('/', (req, res) => {
     })
 });
 
+router.post('/', (req, res) => {
+    const photo = req.body;
+    const sqlText = `INSERT INTO photos ("path", "description")
+                        VALUES ($1, $2);
+                        `;
+    const sqlParams = [photo.path, photo.description];
+    console.log(sqlParams);
+    pool.query(sqlText, sqlParams)
+    .then((result) => {
+        console.log('photo added');
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log('error in POST', error);
+        res.sendStatus(500);
+    })
+});
+
 
 
 
