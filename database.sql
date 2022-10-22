@@ -21,4 +21,4 @@ VALUES ('images/goat_small.jpg',
     0),
     ('images/Lake-profile-picture.jpg', 
     'Photo of the author kayaking on Cedar Lake',
-    0)
+    0);
