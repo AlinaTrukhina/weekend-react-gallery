@@ -1,11 +1,11 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 function GalleryList({photosList, likePhoto}) {
-    console.log('in GalleryList');
+    //console.log('in GalleryList');
     return (
         <>
         
-            {console.log(photosList)}
+            {/* {console.log(photosList)} */}
             {photosList.map(photo => 
             <figure key={photo.id}>
                 <GalleryItem 
