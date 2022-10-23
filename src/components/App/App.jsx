@@ -45,7 +45,6 @@ function App() {
     })
   );
 
-
   // PUT endpoint
   function likePhoto(photo) {
     axios({
@@ -54,6 +53,7 @@ function App() {
       })
       .then(response=>{
         console.log('PUT done');
+        setNumOfLikes();
         getPhotos();
       })
       .catch((error)=>{

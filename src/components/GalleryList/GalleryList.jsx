@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({photosList, likePhoto}) {
+function GalleryList({photosList, likePhoto, numOfLikes}) {
     //console.log('in GalleryList');
     return (
         <>
