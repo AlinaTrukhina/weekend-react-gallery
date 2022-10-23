@@ -1,7 +1,7 @@
 
-
-import * as React from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
+import ShowImgOrDesc from '../App/ShowImgOrDesc/ShowImgOrDesc';
 
 function GalleryItem({photo, likePhoto, deletePhoto}) {
 
@@ -15,11 +15,14 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
         console.log(photo.id);
         deletePhoto(photo);
     }
-
+    
     return (
         <>
-        <img src={photo.path}/>
-        <figcaption>{photo.description}</figcaption>
+        <ShowImgOrDesc 
+        photo={photo}/>
+        {/* <img 
+        src={photo.path}/> */}
+        
         <section className='likesContainer'>
         <p> {photo.likes} likes</p>
         <Button 
@@ -39,7 +42,8 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
         </Button>
         </section>
         </>
-    );
+    )
+
 }
 
 export default GalleryItem;

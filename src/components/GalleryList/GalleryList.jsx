@@ -4,19 +4,19 @@ function GalleryList({photosList, likePhoto, deletePhoto}) {
     //console.log('in GalleryList');
     return (
         <>
-        
+        <ul className='photo-list'>
             {photosList.map(photo => 
-            <figure className='main-item'
-            key={photo.id}>
+            <li className="photo-card"
+            key={photo.id}
+            >
                 <GalleryItem 
                 photo={photo}
                 likePhoto={likePhoto}
                 deletePhoto={deletePhoto}
                 />
-            </figure>
-            
+            </li>
             )}
-        
+        </ul>
         </>
     );
 }

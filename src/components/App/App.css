@@ -1,53 +1,75 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+  
+  html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Forum', cursive;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #430027;
+    padding: 1em;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+
+
+.photo-list {
+	display: block;
+	margin: 1rem auto;
+	padding: 0;
+	font-size: 0;
+	text-align: center;
+	list-style: none;
 }
 
-.App {
-  text-align: center;
+.photo-card {
+	display: inline-block;
+	width: 90%;
+    height: 350px;
+	max-width: 20rem;
+	margin: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	overflow: hidden;
+	box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
-.App-header {
-  background-color: #430027;
-  padding: 1em;
-  color: white;
+.photo-card:hover {
+	transform: translateY(-0.5rem) scale(1.0125);
+	box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-img {
-  max-width: 200px;
-  width: auto;
-  height: 200px;
-  aspect-ratio: 1; /* will make width equal to height (500px container) */
-  object-fit: cover;
-}
-
-.main-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  /* grid-template-columns: auto auto auto; */
-  background-color: #880E4F;
-  padding: 10px;
-}
-
-.main-item {
-  background-color: #bc477b;
-  color: white;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  text-align: center;
+.photo-card > img {
+    width: auto;
+    height: 80%;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 .likesContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+	display: inline-block;
+	padding: 1em 0.5em;
+	color: #515151;
+	text-decoration: none;
 }
 
-form {
-  background-color: #880E4F;
+.likesContainer > p {
+    display: inline;
+	margin: 0.1em 0;
+    font-weight: bolder;
 }
