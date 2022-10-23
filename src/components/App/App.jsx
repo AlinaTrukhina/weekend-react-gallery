@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import GalleryForm from '../GalleryForm/GalleryForm';
 import GalleryList from '../GalleryList/GalleryList';
 import './App.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Header from '../Header/Header';
+
 
 function App() {
 
@@ -12,6 +16,12 @@ function App() {
     getPhotos();
   }, []);
 
+  // dark mode from Material UI
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
   // function add photo to the database
   const addPhoto = (photo) => (
@@ -51,12 +61,10 @@ function App() {
         method: 'PUT',
         url: `/gallery/like/${photo.id}`
       })
-      .then(response=>{
-        console.log('PUT done');
-        setNumOfLikes();
+      .then(response => {
         getPhotos();
       })
-      .catch((error)=>{
+      .catch((error) => {
         console.log('error in PUT endpoint', error);
       })
   }
@@ -68,7 +76,6 @@ function App() {
       url: `/gallery/delete/${photo.id}`
     })
     .then(response=> {
-      console.log('DELETE done');
       getPhotos();
     })
     .catch((error) => {
@@ -78,10 +85,10 @@ function App() {
   
 
     return (
+      <ThemeProvider theme={darkTheme}>
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
+        <Header />
+        <main className='main-container' >
         <GalleryForm
         addPhoto={addPhoto} />
         <GalleryList 
@@ -89,7 +96,9 @@ function App() {
         likePhoto={likePhoto}
         deletePhoto={deletePhoto}
         />
+        </main>
       </div>
+      </ThemeProvider>
     );
 }
 

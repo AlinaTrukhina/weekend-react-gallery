@@ -1,5 +1,8 @@
 
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
 function GalleryItem({photo, likePhoto, deletePhoto}) {
 
     function handleLike(evt) {
@@ -17,9 +20,21 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
         <>
         <img src={photo.path}/>
         <figcaption>{photo.description}</figcaption>
-        <button onClick={handleLike}>Like</button>
+        <Button 
+            onClick={handleLike}
+            variant="contained"
+            size="small"
+            >
+            Like
+        </Button>
         <p> {photo.likes} likes</p>
-        <button onClick={handleDelete}>Delete</button>
+        <Button 
+            onClick={handleDelete}
+            variant="contained"
+            size="small"
+            >
+            Delete
+        </Button>
         </>
     );
 }
