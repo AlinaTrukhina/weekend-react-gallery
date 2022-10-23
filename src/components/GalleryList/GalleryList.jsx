@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({photosList, likePhoto, numOfLikes}) {
+function GalleryList({photosList, likePhoto, deletePhoto}) {
     //console.log('in GalleryList');
     return (
         <>
@@ -11,6 +11,7 @@ function GalleryList({photosList, likePhoto, numOfLikes}) {
                 <GalleryItem 
                 photo={photo}
                 likePhoto={likePhoto}
+                deletePhoto={deletePhoto}
                 />
             </figure>
             

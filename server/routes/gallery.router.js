@@ -5,18 +5,6 @@ const pool = require('../modules/pool');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
-// PUT Route
-// router.put('/like/:id', (req, res) => {
-//     //console.log(req.params);
-//     const galleryId = req.params.id;
-//     for(const galleryItem of galleryItems) {
-//         if(galleryItem.id == galleryId) {
-//             galleryItem.likes += 1;
-//         }
-//     }
-//     res.sendStatus(200);
-// }); // END PUT Route
-
 // updated PUT route
 router.put('/like/:id', (req, res) => {
     // console.log(req.params.id);
@@ -36,12 +24,6 @@ router.put('/like/:id', (req, res) => {
     })
 });
 
-// // GET Route
-// router.get('/', (req, res) => {
-//     //console.log('getting gallery items', galleryItems);
-//     res.send(galleryItems);
-// }); // END GET Route
-
 // updated GET route
 router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM photos
@@ -58,6 +40,7 @@ router.get('/', (req, res) => {
     })
 });
 
+// route to add a photo to database
 router.post('/', (req, res) => {
     const photo = req.body;
     const sqlText = `INSERT INTO photos ("path", "description")
@@ -76,7 +59,23 @@ router.post('/', (req, res) => {
     })
 });
 
-
+// route to delete photo
+router.delete('/delete/:id', (req, res) => {
+    // console.log(req.params.id);
+    sqlParams = [req.params.id];
+    sqlText = `DELETE FROM photos
+                WHERE id = $1 ;`;
+    
+    pool.query(sqlText, sqlParams)
+    .then((result) => {
+        console.log('deleted photo');
+        res.sendStatus(204);
+    })
+    .catch((error) => {
+        console.log('error in DELETE photo', error);
+        res.sendStatus(500);
+    })
+});
 
 
 module.exports = router;
