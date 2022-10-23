@@ -61,6 +61,22 @@ function App() {
       })
   }
 
+  // DELETE endpoint
+  function deletePhoto(photo) {
+    axios({
+      method: 'DELETE',
+      url: `/gallery/delete/${photo.id}`
+    })
+    .then(response=> {
+      console.log('DELETE done');
+      getPhotos();
+    })
+    .catch((error) => {
+      console.log('error in DELETE endpoint', error);
+    })
+  }
+  
+
     return (
       <div className="App">
         <header className="App-header">
@@ -71,6 +87,7 @@ function App() {
         <GalleryList 
         photosList={photosList}
         likePhoto={likePhoto}
+        deletePhoto={deletePhoto}
         />
       </div>
     );
