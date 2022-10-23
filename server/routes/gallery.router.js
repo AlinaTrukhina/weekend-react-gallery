@@ -43,8 +43,8 @@ router.get('/', (req, res) => {
 // route to add a photo to database
 router.post('/', (req, res) => {
     const photo = req.body;
-    const sqlText = `INSERT INTO photos ("path", "description")
-                        VALUES ($1, $2);
+    const sqlText = `INSERT INTO photos ("path", "description", "likes")
+                        VALUES ($1, $2, 0);
                         `;
     const sqlParams = [photo.path, photo.description];
     console.log(sqlParams);

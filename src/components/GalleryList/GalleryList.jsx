@@ -5,9 +5,9 @@ function GalleryList({photosList, likePhoto, deletePhoto}) {
     return (
         <>
         
-            {/* {console.log(photosList)} */}
             {photosList.map(photo => 
-            <figure key={photo.id}>
+            <figure className='main-item'
+            key={photo.id}>
                 <GalleryItem 
                 photo={photo}
                 likePhoto={likePhoto}

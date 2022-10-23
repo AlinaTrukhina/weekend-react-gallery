@@ -1,12 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #430027;
   padding: 1em;
   color: white;
-  margin-bottom: 1em;
 }
 
 .App-title {
@@ -15,5 +20,34 @@
 
 img {
   max-width: 200px;
+  width: auto;
+  height: 200px;
+  aspect-ratio: 1; /* will make width equal to height (500px container) */
+  object-fit: cover;
 }
 
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  /* grid-template-columns: auto auto auto; */
+  background-color: #880E4F;
+  padding: 10px;
+}
+
+.main-item {
+  background-color: #bc477b;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+.likesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+form {
+  background-color: #880E4F;
+}
