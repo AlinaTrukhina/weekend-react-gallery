@@ -25,8 +25,7 @@ function GalleryForm({addPhoto}) {
             placeholder="description" 
             required />
             <button>Submit Photo</button>
-        </form>
-        <p>gallery form</p>    
+        </form> 
         </>
     );
 }

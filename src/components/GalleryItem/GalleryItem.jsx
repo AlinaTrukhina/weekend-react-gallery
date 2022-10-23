@@ -20,6 +20,8 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
         <>
         <img src={photo.path}/>
         <figcaption>{photo.description}</figcaption>
+        <section className='likesContainer'>
+        <p> {photo.likes} likes</p>
         <Button 
             onClick={handleLike}
             variant="contained"
@@ -27,7 +29,7 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
             >
             Like
         </Button>
-        <p> {photo.likes} likes</p>
+        </section>
         <Button 
             onClick={handleDelete}
             variant="contained"

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import GalleryForm from '../GalleryForm/GalleryForm';
 import GalleryList from '../GalleryList/GalleryList';
 import './App.css';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from '../Header/Header';
 
@@ -15,13 +14,6 @@ function App() {
   useEffect( () => {
     getPhotos();
   }, []);
-
-  // dark mode from Material UI
-  const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  });
 
   // function add photo to the database
   const addPhoto = (photo) => (
@@ -85,12 +77,12 @@ function App() {
   
 
     return (
-      <ThemeProvider theme={darkTheme}>
+
       <div className="App">
         <Header />
-        <main className='main-container' >
         <GalleryForm
         addPhoto={addPhoto} />
+        <main className='main-container' >
         <GalleryList 
         photosList={photosList}
         likePhoto={likePhoto}
@@ -98,7 +90,7 @@ function App() {
         />
         </main>
       </div>
-      </ThemeProvider>
+
     );
 }
 
