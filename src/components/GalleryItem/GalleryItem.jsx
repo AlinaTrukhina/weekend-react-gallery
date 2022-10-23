@@ -1,9 +1,23 @@
-
-import React from 'react';
 import Button from '@mui/material/Button';
 import ShowImgOrDesc from '../App/ShowImgOrDesc/ShowImgOrDesc';
+import swal from 'sweetalert';
 
 function GalleryItem({photo, likePhoto, deletePhoto}) {
+//     const DeleteSwal = withReactContent(Swal)
+
+    // DeleteSwal.fire({
+    //     title: <p>Are you sure you want to delete this?</p>,
+    //     icon: 'warning',
+    //     showCancelButton: true,
+    //     confirmButtonColor: '#3085d6',
+    //     cancelButtonColor: '#d33',
+    //     confirmButtonText: 'Yes, delete it!'
+    //     })
+    //     .then(function(isConfirm){
+    //         if (isConfirm) {
+    //         window.location.href = originLink;
+    //         }
+    //     })
 
     function handleLike(evt) {
         evt.preventDefault();
@@ -12,12 +26,39 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
 
     function handleDelete(evt) {
         evt.preventDefault();
+
+        swal({
+            title: "Delete?",
+            text: "Please ensure and then confirm!",
+            type: "warning",
+            buttons: {
+                cancel: {
+                  text: "Cancel!",
+                  value: null,
+                  visible: true,
+                  className: "",
+                  closeModal: true,
+                },
+                delete: {
+                    text: "Delete it!",
+                    value: true,
+                    visible: true,
+                    className: "",
+                    closeModal: true
+                }
+            }
+        }).then((willDelete) => {
+            if (willDelete) {
+                deletePhoto(photo);
+            }    
+        })
+
         console.log(photo.id);
-        deletePhoto(photo);
     }
     
     return (
         <>
+        
         <ShowImgOrDesc 
         photo={photo}/>
         {/* <img 
