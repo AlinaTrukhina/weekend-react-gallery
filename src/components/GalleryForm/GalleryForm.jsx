@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function GalleryForm({addPhoto}) {
     let [imgInput, setImgInput] = useState('');
@@ -25,7 +27,10 @@ function GalleryForm({addPhoto}) {
             type="text" 
             placeholder="description" 
             required />
-            <button>Submit Photo</button>
+            <Button
+            variant="contained"
+            size="small"
+            >Submit Photo</Button>
         </form> 
         </>
     );

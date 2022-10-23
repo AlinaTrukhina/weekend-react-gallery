@@ -3,21 +3,6 @@ import ShowImgOrDesc from '../App/ShowImgOrDesc/ShowImgOrDesc';
 import swal from 'sweetalert';
 
 function GalleryItem({photo, likePhoto, deletePhoto}) {
-//     const DeleteSwal = withReactContent(Swal)
-
-    // DeleteSwal.fire({
-    //     title: <p>Are you sure you want to delete this?</p>,
-    //     icon: 'warning',
-    //     showCancelButton: true,
-    //     confirmButtonColor: '#3085d6',
-    //     cancelButtonColor: '#d33',
-    //     confirmButtonText: 'Yes, delete it!'
-    //     })
-    //     .then(function(isConfirm){
-    //         if (isConfirm) {
-    //         window.location.href = originLink;
-    //         }
-    //     })
 
     function handleLike(evt) {
         evt.preventDefault();
@@ -27,6 +12,7 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
     function handleDelete(evt) {
         evt.preventDefault();
 
+        //uses SweetAlert to bring up confirmation window
         swal({
             title: "Delete?",
             text: "Please ensure and then confirm!",
