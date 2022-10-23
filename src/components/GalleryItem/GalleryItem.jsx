@@ -29,7 +29,7 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
             >
             Like
         </Button>
-        </section>
+        
         <Button 
             onClick={handleDelete}
             variant="contained"
@@ -37,6 +37,7 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
             >
             Delete
         </Button>
+        </section>
         </>
     );
 }

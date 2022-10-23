@@ -15,7 +15,8 @@ function GalleryForm({addPhoto}) {
 
     return (
         <>
-        <form onSubmit={handlePhotoFormSubmit} >
+        <form 
+        onSubmit={handlePhotoFormSubmit} >
             <input onChange={(evt) => setImgInput(evt.target.value)}
             type="text" 
             placeholder="image url" 
