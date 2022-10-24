@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "@mui/material";
 
 function GalleryForm({addPhoto}) {
     let [imgInput, setImgInput] = useState('');
@@ -15,20 +16,22 @@ function GalleryForm({addPhoto}) {
 
     return (
         <>
-        <form 
+        <form className="submitPhotoForm"
         onSubmit={handlePhotoFormSubmit} >
             <input onChange={(evt) => setImgInput(evt.target.value)}
             type="text" 
             placeholder="image url" 
             required />
-            <input onChange={(evt) => setDescInput(evt.target.value)}
+            <input id="descriptionInput"
+            onChange={(evt) => setDescInput(evt.target.value)}
             type="text" 
             placeholder="description" 
             required />
-            <button>Submit Photo</button>
+            
+            <Button variant="contained" size="small" color="submit">Submit Photo</Button>
         </form> 
         </>
     );
 }
 
-export default GalleryForm;
+export default GalleryForm;3

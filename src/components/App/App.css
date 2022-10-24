@@ -5,6 +5,7 @@
 }
   
 @import url('https://fonts.googleapis.com/css2?family=Forum');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto+Slab&display=swap');
   
 html, body {
     width: 100vw;
@@ -14,19 +15,10 @@ html, body {
 
 .App {
     text-align: center;
-    background-image: url("https://images.unsplash.com/photo-1468581264429-2548ef9eb732");
+    background-image: url('/public/images/photo-1468581264429-2548ef9eb732.jpg');
     background-blend-mode: lighten;
-}
-
-.App::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.25);
-    z-index: -1;
+    background-repeat: no-repeat;
+    background-origin: content-box;
 }
 
 .App-header {
@@ -36,7 +28,7 @@ html, body {
 }
 
 .App-title {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .photo-list {
@@ -101,5 +93,27 @@ html, body {
     display: inline;
 	margin: 0.1em 0;
     font-weight: bolder;
-
 }
+
+.submitPhotoForm {
+    display: inline-flex;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.submitPhotoForm > input {
+    border: #81d4fa 1px;
+    border-radius: 4px;
+    line-height: 1.75;
+    padding-left: 5px;
+    margin-right: 5px;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* .submitPhotoForm > label {
+    border: #81d4fa 1px;
+    border-radius: 4px;
+    position: relative;
+    top: -5px;
+    left: 40px;
+} */

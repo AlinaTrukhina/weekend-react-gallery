@@ -7,7 +7,6 @@ import './App.css';
 import Header from '../Header/Header';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
 function App() {
 
   const [photosList, setPhotosList] = useState([]);  
@@ -27,6 +26,9 @@ function App() {
       },
       like: {
         main: '#f06292'
+      }, 
+      submit: {
+        main: '#00acc1'
       }
     },
   });
@@ -93,7 +95,6 @@ function App() {
       console.log('error in DELETE endpoint', error);
     })
   }
-
 
   return (
     <ThemeProvider theme={theme}>
