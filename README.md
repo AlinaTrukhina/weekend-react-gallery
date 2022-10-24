@@ -3,10 +3,29 @@
 
 _Duration: 2 Day Sprint_
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This app shows photos in a beautiful gallery format, where you can click on an image to display it description. Clicking the description displays the image.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+You can also like any image by clicking the heart icon, or delete it with the trash can icon.
 
+You can add your own photo to the gallery by entering the url and descrition and clicking submit photo.
 
-TODO: 
-[x] write GET endpoint
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [Sweetalert](https://sweetalert.js.org/)
+- [Material UI](https://mui.com/)
+
+## Installation
+1. Create a database named `react-gallery`,
+2. Copy the contents of file `database` into an SQL query in the database and execute,
+3. Open up your editor of choice and run an `npm install`,
+4. Run `npm run server` in your terminal,
+5. Run `npm run client` in your terminal.
+
+## Built With
+
+- React
+- Node.js
+- Postgres
+- Material UI
+
