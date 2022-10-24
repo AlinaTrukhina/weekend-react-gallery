@@ -7,10 +7,10 @@ import swal from 'sweetalert';
 
 function GalleryItem({photo, likePhoto, deletePhoto}) {
 
-    function handleLike(evt) {
-        evt.preventDefault();
-        likePhoto(photo);
-    }
+    // function handleLike(evt) {
+    //     evt.preventDefault();
+    //     likePhoto(photo);
+    // }
 
     function handleDelete(evt) {
         evt.preventDefault();
@@ -53,7 +53,7 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
         className='likesContainer'>
         {photo.likes === 0 ? <h3>No likes!</h3> : <h3>Likes: {photo.likes}</h3>}
         
-        <IconButton onClick={handleLike} aria-label='like'>
+        <IconButton onClick={() => likePhoto(photo)} aria-label='like'>
             <FavoriteIcon color='like' />
         </IconButton>
         

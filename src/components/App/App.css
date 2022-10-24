@@ -48,7 +48,7 @@ html, body {
 	margin: 0.5rem;
     padding-top: 1.5em;
     background-color: #81d4fa;
-
+    opacity: 0.9;
 	font-size: 1rem;
 	text-decoration: none;
 	overflow: hidden;
