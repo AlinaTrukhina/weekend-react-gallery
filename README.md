@@ -27,5 +27,6 @@ You can add your own photo to the gallery by entering the url and descrition and
 - React
 - Node.js
 - Postgres
+- CSS
 - Material UI
 

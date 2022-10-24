@@ -48,8 +48,11 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
     return (
         <>
         <ShowImgOrDesc photo={photo}/>
-        <section className='likesContainer'>
-        <h3>Likes: {photo.likes}</h3>
+
+        <section 
+        className='likesContainer'>
+        {photo.likes === 0 ? <h3>No likes!</h3> : <h3>Likes: {photo.likes}</h3>}
+        
         <IconButton onClick={handleLike} aria-label='like'>
             <FavoriteIcon color='like' />
         </IconButton>

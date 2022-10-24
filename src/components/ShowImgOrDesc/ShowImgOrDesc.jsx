@@ -13,12 +13,13 @@ function ShowImgOrDesc({photo}) {
         return <img 
         src={photo.path} 
         onClick={showEither}
+        alt={photo.description}
         />
     }
     else {
         return (
-        <section className="photoDescription">
-        <h2 onClick={showEither}>{photo.description} </h2>
+        <section onClick={showEither} className="photoDescription">
+        <h2>{photo.description} </h2>
         </section>)
     }
 }
