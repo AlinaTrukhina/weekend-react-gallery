@@ -2,30 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Roboto+Slab&display=swap');
   
-  html, body {
+html, body {
     width: 100vw;
     height: 100vh;
     font-family: 'Forum', cursive;
-  }
-  
-  .App {
+}
+
+.App {
     text-align: center;
-  }
-  
-  .App-header {
-    background-color: #430027;
+    background-image: url('/public/images/photo-1468581264429-2548ef9eb732.jpg');
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+.App-header {
+    background-color: #81d4fa;
     padding: 1em;
     color: white;
-  }
-  
-  .App-title {
-    font-size: 1.5em;
-  }
+}
 
+.App-title {
+    font-size: 2em;
+}
 
 .photo-list {
 	display: block;
@@ -41,8 +45,10 @@
 	width: 90%;
     height: 350px;
 	max-width: 20rem;
-	margin: 1rem;
-    padding-top: 1em;
+	margin: 0.5rem;
+    padding-top: 1.5em;
+    background-color: #81d4fa;
+
 	font-size: 1rem;
 	text-decoration: none;
 	overflow: hidden;
@@ -50,9 +56,22 @@
 	transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
-.photo-card:hover {
-	transform: translateY(-0.5rem) scale(1.0125);
+.photoDescription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75%;
+    margin-top: 20px;
+    padding: 0 15px;
+    background-color: #90caf9;
+}
+
+.photo-card:hover img {
+	transform: translateY(-0.5rem);
 	box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+    max-width: 500px;
+/* 	transform: translateY(-0.5rem) scale(1.0125); */
 }
 
 .photo-card > img {
@@ -63,14 +82,39 @@
 }
 
 .likesContainer {
-	display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 	padding: 1em 0.5em;
 	color: #515151;
 	text-decoration: none;
 }
 
-.likesContainer > p {
+.likesContainer > h3 {
     display: inline;
 	margin: 0.1em 0;
     font-weight: bolder;
 }
+
+.submitPhotoForm {
+    display: inline-flex;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.submitPhotoForm > input {
+    border: #81d4fa 1px;
+    border-radius: 4px;
+    line-height: 1.75;
+    padding-left: 5px;
+    margin-right: 5px;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* .submitPhotoForm > label {
+    border: #81d4fa 1px;
+    border-radius: 4px;
+    position: relative;
+    top: -5px;
+    left: 40px;
+} */

@@ -3,13 +3,35 @@ import React, { useState, useEffect } from 'react';
 import GalleryForm from '../GalleryForm/GalleryForm';
 import GalleryList from '../GalleryList/GalleryList';
 import './App.css';
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 import Header from '../Header/Header';
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
 
   const [photosList, setPhotosList] = useState([]);  
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+          // light green
+          main: '#1de8b5',
+      },
+      secondary: {
+          // light blue
+          main: '#81d4fa',
+      },
+      error: {
+          main: '#f44336',
+      },
+      like: {
+        main: '#f06292'
+      }, 
+      submit: {
+        main: '#00acc1'
+      }
+    },
+  });
 
   useEffect( () => {
     getPhotos();
@@ -30,7 +52,6 @@ function App() {
       console.log('error in POST', error);
     })
   );
-  
 
   // GET endpoint
   const getPhotos = () => (
@@ -74,10 +95,9 @@ function App() {
       console.log('error in DELETE endpoint', error);
     })
   }
-  
 
-    return (
-
+  return (
+    <ThemeProvider theme={theme}>
       <div className="App">
         <Header />
         <GalleryForm
@@ -90,7 +110,7 @@ function App() {
         />
         </main>
       </div>
-
+    </ThemeProvider>
     );
 }
 

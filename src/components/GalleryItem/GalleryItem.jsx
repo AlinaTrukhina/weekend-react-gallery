@@ -1,6 +1,8 @@
-import Button from '@mui/material/Button';
-import ShowImgOrDesc from '../App/ShowImgOrDesc/ShowImgOrDesc';
-import swal from 'sweetalert';
+import React from 'react';
+import ShowImgOrDesc from '../ShowImgOrDesc/ShowImgOrDesc';
+import { IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function GalleryItem({photo, likePhoto, deletePhoto}) {
 
@@ -44,29 +46,17 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
     
     return (
         <>
-        
-        <ShowImgOrDesc 
-        photo={photo}/>
-        {/* <img 
-        src={photo.path}/> */}
-        
+        <ShowImgOrDesc photo={photo}/>
         <section className='likesContainer'>
-        <p> {photo.likes} likes</p>
-        <Button 
-            onClick={handleLike}
-            variant="contained"
-            size="small"
-            >
-            Like
-        </Button>
+        <h3>Likes: {photo.likes}</h3>
+        <IconButton onClick={handleLike} aria-label='like'>
+            <FavoriteIcon color='like' />
+        </IconButton>
         
-        <Button 
-            onClick={handleDelete}
-            variant="contained"
-            size="small"
-            >
-            Delete
-        </Button>
+        <IconButton onClick={handleDelete} aria-label='delete'>
+            <DeleteIcon />
+        </IconButton>
+
         </section>
         </>
     )
