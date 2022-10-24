@@ -60,7 +60,7 @@ function App() {
       url: '/gallery'
     })
     .then(response => {
-      console.log('GET response is', response.data)
+      // console.log('GET response is', response.data)
       setPhotosList(response.data);
     })
     .catch((error) => {
