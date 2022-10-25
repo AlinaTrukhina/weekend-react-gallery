@@ -27,7 +27,7 @@ function GalleryForm({addPhoto}) {
             type="text" 
             placeholder="description" 
             required />
-            <Button variant="contained" size="small" color="submit">Submit Photo</Button>
+            <Button variant="contained" size="small" color="submit" type="submit">Submit Photo</Button>
 
         </form> 
         </>
