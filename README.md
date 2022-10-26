@@ -9,6 +9,10 @@ You can also like any image by clicking the heart icon, or delete it with the tr
 
 You can add your own photo to the gallery by entering the url and descrition and clicking submit photo.
 
+## Screen capture
+
+![finished gallery screen capture](finished-product/gallery-recording.gif)
+
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
