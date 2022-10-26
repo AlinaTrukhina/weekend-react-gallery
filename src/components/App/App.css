@@ -11,11 +11,12 @@ html, body {
     width: 100vw;
     height: 100vh;
     font-family: 'Forum', cursive;
+    background-image: url('/public/images/photo-1468581264429-2548ef9eb732.jpg');
 }
 
 .App {
     text-align: center;
-    background-image: url('/public/images/photo-1468581264429-2548ef9eb732.jpg');
+    
     background-blend-mode: lighten;
     background-repeat: no-repeat;
     background-origin: content-box;

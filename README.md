@@ -21,12 +21,14 @@ You can add your own photo to the gallery by entering the url and descrition and
 3. Open up your editor of choice and run an `npm install`,
 4. Run `npm run server` in your terminal,
 5. Run `npm run client` in your terminal.
+6. Open up your browser and see the gallery in action!
 
 ## Built With
 
 - React
 - Node.js
-- Postgres
+- PostgreSQL
+- HTML
 - CSS
 - Material UI
 
