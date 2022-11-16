@@ -7,7 +7,7 @@ This app shows photos in a beautiful gallery format, where you can click on an i
 
 You can also like any image by clicking the heart icon, or delete it with the trash can icon.
 
-You can add your own photo to the gallery by entering the url and descrition and clicking submit photo.
+You can add your own photo to the gallery by entering the url and description and clicking submit photo.
 
 ## Screen capture
 
