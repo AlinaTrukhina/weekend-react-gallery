@@ -4,6 +4,18 @@ const pg = require('pg');
 // sets up pg to connect to the database
 const Pool = pg.Pool;
 
+// When our app is deployed to the internet 
+// we'll use the DATABASE_URL environment variable
+// to set the connection info: web address, username/password, db name
+if (process.env.DATABASE_URL) {
+    pool = new pg.Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    });
+}
+
 // this function constructs new object pool
 const pool = new Pool({
     database: 'react_gallery',
