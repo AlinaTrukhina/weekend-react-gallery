@@ -21,4 +21,8 @@ VALUES ('images/goat_small.jpg',
     0),
     ('images/Lake-profile-picture.jpg', 
     'Photo of the author kayaking on Cedar Lake',
-    0);
+    0),
+    ('https://live.staticflickr.com/8173/8031293845_1694e2e48d_b.jpg',
+    'My favorite bike',
+    0)
+    ;
