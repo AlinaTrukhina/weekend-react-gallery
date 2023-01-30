@@ -2,7 +2,7 @@
 const pg = require('pg');
 
 // sets up pg to connect to the database
-const Pool = pg.Pool;
+let pool;
 
 // When our app is deployed to the internet 
 // we'll use the DATABASE_URL environment variable
@@ -17,13 +17,14 @@ if (process.env.DATABASE_URL) {
 }
 
 // this function constructs new object pool
-const pool = new Pool({
-    database: 'react_gallery',
-    host: 'localhost', // look for database on our local server
-    port: 5432, 
-    // max: 20 // don't allow more than 20 connections 
-});
-
+else { 
+        pool = new Pool({
+        database: 'react_gallery',
+        host: 'localhost', // look for database on our local server
+        port: 5432, 
+        // max: 20 // don't allow more than 20 connections 
+    });
+}
 // set up error listener for potential troubleshooting
 pool.on('error', (error) => {
     console.error('database error', error);
