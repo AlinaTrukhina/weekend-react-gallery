@@ -44,9 +44,8 @@ function App() {
       url: '/gallery',
       data: photo
     })
-    .then(response => {
-      console.log('POST photo');
-      //getPhotos();
+    .then(res => {
+      res.sendStatus(201);
     })
     .catch((error) => {
       console.log('error in POST', error);

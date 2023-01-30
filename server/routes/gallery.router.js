@@ -7,7 +7,6 @@ const pool = require('../modules/pool');
 
 // updated PUT route
 router.put('/like/:id', (req, res) => {
-    // console.log(req.params.id);
     sqlParams = [req.params.id];
     sqlText = `UPDATE photos
                 SET likes = likes+1
@@ -15,7 +14,6 @@ router.put('/like/:id', (req, res) => {
     
     pool.query(sqlText, sqlParams)
     .then((result) => {
-        console.log('like counter up');
         res.sendStatus(201);
     })
     .catch((error) => {
@@ -31,7 +29,6 @@ router.get('/', (req, res) => {
                         LIMIT 20;`;
     pool.query(sqlText)
     .then((result) => {
-        console.log('sending photos from database');
         res.send(result.rows);
     })
     .catch((error) => {
@@ -47,10 +44,8 @@ router.post('/', (req, res) => {
                         VALUES ($1, $2, 0);
                         `;
     const sqlParams = [photo.path, photo.description];
-    console.log(sqlParams);
     pool.query(sqlText, sqlParams)
     .then((result) => {
-        console.log('photo added');
         res.sendStatus(201);
     })
     .catch((error) => {
@@ -61,14 +56,12 @@ router.post('/', (req, res) => {
 
 // route to delete photo
 router.delete('/delete/:id', (req, res) => {
-    // console.log(req.params.id);
     sqlParams = [req.params.id];
     sqlText = `DELETE FROM photos
                 WHERE id = $1 ;`;
     
     pool.query(sqlText, sqlParams)
     .then((result) => {
-        console.log('deleted photo');
         res.sendStatus(204);
     })
     .catch((error) => {

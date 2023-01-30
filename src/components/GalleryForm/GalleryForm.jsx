@@ -4,7 +4,6 @@ import { Button } from "@mui/material";
 function GalleryForm({addPhoto}) {
     let [imgInput, setImgInput] = useState('');
     let [descInput, setDescInput] = useState('');
-    //console.log('inputs', imgInput, descInput);
 
     function handlePhotoFormSubmit() {
         const newPhoto = {
@@ -28,10 +27,9 @@ function GalleryForm({addPhoto}) {
             placeholder="description" 
             required />
             <Button variant="contained" size="small" color="submit" type="submit">Submit Photo</Button>
-
         </form> 
         </>
     );
 }
 
-export default GalleryForm;3
+export default GalleryForm;

@@ -1,7 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 function GalleryList({photosList, likePhoto, deletePhoto}) {
-    //console.log('in GalleryList');
     return (
         <>
         <ul className='photo-list'>

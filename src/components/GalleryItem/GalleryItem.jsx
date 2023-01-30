@@ -42,7 +42,6 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
             }    
         })
 
-        console.log(photo.id);
     }
     
     return (
