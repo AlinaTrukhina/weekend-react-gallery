@@ -15,10 +15,9 @@ if (process.env.DATABASE_URL) {
         }
     });
 }
-
 // this function constructs new object pool
 else { 
-        pool = new Pool({
+        pool = new pg.Pool({
         database: 'react_gallery',
         host: 'localhost', // look for database on our local server
         port: 5432, 
