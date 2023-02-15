@@ -50,13 +50,13 @@ function GalleryItem({photo, likePhoto, deletePhoto}) {
 
         <section 
         className='likesContainer'>
-        {photo.likes === 0 ? <h3>No likes!</h3> : <h3>Likes: {photo.likes}</h3>}
+        {photo.likes === 0 ? <h3>No likes!</h3> : <h3>Likes: <span className="likeCount">{photo.likes}</span></h3>}
         
-        <IconButton onClick={() => likePhoto(photo)} aria-label='like'>
+        <IconButton onClick={() => likePhoto(photo)} className="likeBtn" aria-label='like'>
             <FavoriteIcon color='like' />
         </IconButton>
         
-        <IconButton onClick={handleDelete} aria-label='delete'>
+        <IconButton onClick={handleDelete} className="deleteBtn" aria-label='delete'>
             <DeleteIcon />
         </IconButton>
 
