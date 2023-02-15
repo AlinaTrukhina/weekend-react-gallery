@@ -7,11 +7,8 @@ describe('template spec', () => {
     cy.get('ul li:first > img').click().get('.photoDescription')
 
     cy.get('.photoDescription').contains('morning')
+
+    // cy.click('.photoDescription').get('ul li:first > img')
   })
 })
 
-describe('My first test', () => {
-  it('Does not do much', () => {
-    expect(true).to.equal(false)
-  })
-})
