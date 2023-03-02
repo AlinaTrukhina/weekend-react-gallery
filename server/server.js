@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 // gallery is the router
 const gallery = require('./routes/gallery.router.js');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for axios requests
